@@ -44,3 +44,14 @@ body{
     background-color: rgb(188, 234, 222);
 }
 
+
+p {
+    text-align: center;
+    color: #213837;
+    margin-top: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
