@@ -1,17 +1,17 @@
 
 
 .navbar {
-   
-}
+   box-shadow: 0 3px 4px rgba(40, 43, 43, 0.1);
+    text-shadow: 0 2px 3px #313b3a;
+} 
 
 .navbar-brand {
- font-size: 15px;
- margin-left: 35px;
+ font-size: 19px;
+ margin-left: 30px;
  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
- /* Georgia, 'Times New Roman', Times, serif */
 }
 
-.navbar-nav {
+/* .navbar-nav {
    
 }
 
@@ -21,17 +21,26 @@
 
 .nav-link {
   
-}
+} */
 
 .nav-link:hover, .nav-link.active {
-    background-color: rgba(255, 255, 255, 0.1);
+   color: rgb(255, 255, 255) !important; 
+
 }
 
 .navbar-custom {
-    background-color: #068484 !important; 
+    background-color: #16716d !important; 
 }
 
-.navbar-custom .navbar-brand,
-.navbar-custom .nav-link {
-    color: rgb(223, 238, 239) !important; 
+.navbar-custom,
+.navbar-custom, .nav-link {
+    color: rgb(198, 220, 222) !important; 
 }
+.navbar-brand{
+    color: rgb(217, 233, 235) !important; 
+}
+
+body{
+    background-color: rgb(188, 234, 222);
+}
+
