@@ -55,14 +55,26 @@ p {
 
 h1,h2,h3 {
 
-    color: #000000;
+    color: #001713;
     font-family:Georgia, 'Times New Roman', Times, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-style: bold;
 }
 
+.ortaBaslik {
+    text-align: center;
+}
+
+.colonCustom {
+    background-color:rgb(219, 254, 254)
+}
+
+.colonCustom2 {
+    background-color:rgb(190, 253, 255)
+}
+
 .dropdown-menu {
-    margin-left : 15px;
-    background-color: #16716d !important; 
+    margin-left: 15px;
+    background-color: #16716d !important;
     border-bottom-left-radius: 0cap;
     border-top-left-radius: 0cap;
 }
@@ -72,3 +84,31 @@ header{
     background: #badcd6;
     border-radius: 1cap;
 }
+
+footer{
+    background-color: #083636;
+    height: 4rem;
+    color: aliceblue;
+    text-align: center;
+    padding: 1rem;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+span{
+    font-size: 10px;
+    margin: 2px;
+}
+
