@@ -41,17 +41,34 @@
 }
 
 body{
-    background-color: rgb(188, 234, 222);
+    background-color: rgb(237, 255, 255);
 }
 
 
 p {
     text-align: center;
-    color: #213837;
+    color: #4c6562;
     margin-top: 20px;
+    margin-bottom: 2px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-h1 {
-    text-align: center;
-    margin-top: 50px;
+h1,h2,h3 {
+
+    color: #000000;
+    font-family:Georgia, 'Times New Roman', Times, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: bold;
+}
+
+.dropdown-menu {
+    margin-left : 15px;
+    background-color: #16716d !important; 
+    border-bottom-left-radius: 0cap;
+    border-top-left-radius: 0cap;
+}
+
+header{
+    margin: 15px;
+    background: #badcd6;
+    border-radius: 1cap;
 }
