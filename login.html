@@ -6,7 +6,8 @@
     <title>Hakkımda</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=1.0">
+     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
   <body>
 
@@ -63,28 +64,40 @@
     </nav>
     
     <!-- header bölümü -->
-    <header class="header">
-      <div class="container container-sm  py-2 my-5">
-
-
-
-          <h1 style="font-size: 50px;" class="m-2" >Siteme Hoşgeldiniz</h1>
-
+    <header class="header headerCustom2">
+      <div class="container container-sm ">
+        
+          <p>Kullancı Adı ve Şifrenizi giriniz</p>
       </div>
     </header>
 
     <!-- ana içerik -->
     <main class="flex-fill">
+      <div class="container-sm p-5">
+        <form action="php/login.php">
+          <div class="mb-3 mt-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="b240210041@sakarya.edu.tr" name="email">
+          </div>
+          <div class="mb-3">
+            <label for="pwd" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="b240210041" name="pswd">
+          </div>
+          <div class="form-check mb-3">
+          </div>
+          <button type="submit" class="btn btn-danger">Submit</button>
+        </form>
+      </div>
 
    </main>
 
     <!-- footer -->
-   <div class="footer" style="margin-top: 120px;">
-        <footer class="footer text-center p-3" style="height: 75px;">
+      <div class="footer" style="margin-top: 120px;">
+        <footer class="footer text-center p-2" style="height: 67px;">
 
            <span>© 2025 Tüm Hakları Saklıdır</span>
            <br>
-              <span>Ahmet Faruk İkiz </span> 
+              <span>Ahmet Faruk İkiz </span> - <a class="linkCustom" href="login.html">Giriş Yap</a>
         </footer>
     </div>
     
