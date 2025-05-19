@@ -1,28 +1,39 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll(".slide");
-    let index = 0;
-  
-    const showSlide = (i) => {
-      slides.forEach((slide, idx) => {
-        slide.classList.toggle("active", idx === i);
-      });
-    };
-  
-    document.getElementById("prev").addEventListener("click", () => {
-      index = (index - 1 + slides.length) % slides.length;
-      showSlide(index);
-    });
-  
-    document.getElementById("next").addEventListener("click", () => {
-      index = (index + 1) % slides.length;
-      showSlide(index);
-    });
-  
-    slides.forEach(slide => {
-      slide.addEventListener("click", () => {
-        location.hash = slide.dataset.target;
-      });
-    });
-  
-    showSlide(index);
+// slider.js
+
+document.addEventListener("DOMContentLoaded", function () {
+  const etkinlikBilgileri = [
+    {
+      baslik: "29 Ekim Cumhuriyet Koşusu",
+      aciklama: "Geçen yıl Seka Parkta 11.si düzenlenen uluslararası maraton büyük bir katılımla gerçekleşti.",
+    },
+    {
+      baslik: "Kocaeli Kitap Fuarı",
+      aciklama: "Türkiye’nin en büyük kitap fuarlarından biri olan bu etkinlik her yıl onbinlerce ziyaretçiyi ağırlar.",
+    },
+    {
+      baslik: "Kocaeli Bilim Şenliği",
+      aciklama: "Genç mucitlerin projelerini tanıttığı ve bilim atölyeleriyle dolu bir etkinliktir.",
+    },
+    {
+      baslik: "Kocaeli Film Günleri",
+      aciklama: "Kültürel çeşitliliği sinema ile buluşturan bu organizasyon sanatseverleri bir araya getiriyor.",
+    },
+  ];
+
+  const baslikElementi = document.getElementById("etkinlikBaslik");
+  const aciklamaElementi = document.getElementById("etkinlikAciklama");
+
+  const carouselElement = document.getElementById("etkinlikSlider");
+
+  carouselElement.addEventListener("slid.bs.carousel", function (event) {
+    const aktifIndex = event.to;
+    const bilgi = etkinlikBilgileri[aktifIndex];
+
+    baslikElementi.textContent = bilgi.baslik;
+    aciklamaElementi.textContent = bilgi.aciklama;
   });
+
+  // İlk yüklemede gösterilecek bilgi
+  baslikElementi.textContent = etkinlikBilgileri[0].baslik;
+  aciklamaElementi.textContent = etkinlikBilgileri[0].aciklama;
+});

@@ -6,7 +6,7 @@ fetch(`https://api.rawg.io/api/games?search=hollow knight&key=${API_KEY}`)
     const oyun = data.results[0];
     const html = `
       <h2 class="text-center header2Custom">${oyun.name}</h2> 
-       <p><strong>Çıkış:</strong> ${oyun.released} - Puan: ${oyun.rating}</p>
+       <p><strong>Çıkış:</strong> ${oyun.released} - Puan: ${oyun.rating}/5</p>
       <img src="${oyun.background_image}" class="mx-4 yumusakResimCustom" width="90%" width="300" height="225"d><br/>
      <br>
 

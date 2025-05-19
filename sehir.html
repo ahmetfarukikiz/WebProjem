@@ -63,18 +63,140 @@
         </div>
     </nav>
     
-    <header class="header">
-      <div class="container container-sm  py-2 my-5">
+    <header class="header headerCustom2">
+      <div class="container container-sm  py-0 my-3 align-items-center">
 
 
 
-          <h1 style="font-size: 50px;" class="m-2" >sehir</h1>
-
+         <h1 class="my-0 hSehirCustom">Kocaeli</h1>
+         <p>Sanayi, Doğa ve Tarih Şehri</p>
       </div>
     </header>
 
-       <!-- ana içerik -->
+       <!-- ana içerik --> 
     <main class="flex-fill">
+
+  <!-- <div id="accordion" class="col-sm">
+
+      <div class="card align-items-center" style="background-color: rgb(255, 255, 255);">
+        <div class="">
+          <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+            <h5>Kocaeli Hakkında</h5>
+          </a>
+        </div>
+        <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+          <div class="card-body">
+            <p class="my-0"> Kocaeli ilinin yüzölçümü 3.505 km²dir. Ülkemizin en büyük 100 sanayi kuruluşunun 18'ine ev sahipliği yapar. TÜİK verilerine göre nüfusu 2.163.139'dur.</p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="row mx-2 my-4">
+          <h1 class="my-3">Kocaeli Hakkında Bilgiler</h1>
+      <div class="col-sm">
+          <div class="card mb-3">
+            <a href="https://tr.wikipedia.org/wiki/Kocaeli">
+              <img src="img/kocaeliharita.jpg" class="card-img-top" height="240px" alt="...">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title">Kocaeli İlçeleri</h5>
+                <p class="card-text pCardCustom">Kocaeli ilinin yüzölçümü 3.505km²dir. Ülkemizin en büyük 100 sanayi kuruluşunun 18'ine ev sahipliği yapar. TÜİK verilerine göre Kocaeli nüfusu 2.163.139'dur.</p>
+             
+            </div>
+          </div>
+      </div>
+
+      <div class="col-sm">
+          <div class="card mb-3">
+             <a href="https://tr.wikipedia.org/wiki/Eskihisar_Kalesi">
+              <img src="img/eskihisarkalesi.jpg" class="card-img-top" height="240px" alt="...">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title">Eskihisar Kalesi</h5>
+                <p class="card-text pCardCustom"> Bizans dönemine ait bu tarihi yapı, Osmanlı döneminde de bölgenin savunmasında önemli rol oynamıştır. Denize olan kıyısı ve surlarıyla eşsiz bir manzara sunar</p>
+             
+            </div>
+          </div>
+      </div>
+      
+      <div class="col-sm ms-auto">
+
+        <div class="card mb-3">
+            <a href="https://tr.wikipedia.org/wiki/%C4%B0zmit_Saat_Kulesi">
+               <img src="img/izmitsaatkulesi.jpg" class="card-img-top" height="240px" alt="...">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title">İzmit Saat Kulesi</h5>
+                <p class="card-text pCardCustom">Sultan 2. Abdülhamit’in tahta çıkışının 25. yılı için yaptırılmış. İzmit’te yer alan kule, şehrin simgesi olarak anılıyor.</p>
+             
+            </div>
+        </div>
+      </div>
+          
+    </div>
+
+    <div class="row m-3">
+        <h1>Etkinlikler</h1>
+
+        <div class="col-sm">
+            <div class="card mb-3">
+              <!-- Carousel -->
+              <div id="etkinlikSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+
+                <!-- Indicators/dots -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#etkinlikSlider" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#etkinlikSlider" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#etkinlikSlider" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#etkinlikSlider" data-bs-slide-to="3"></button>
+                </div>
+
+                <!-- The slideshow/carousel -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="img/cumhuriyetkoşusu.jpg" alt="Etkinlik-1" class="d-flex w-100">
+                      <div class="carousel-caption">
+                        <h4 style="text-shadow: 15rem;">29 Ekim Cumhuriyet Koşusu</h4>
+                        <span style="text-shadow: 5rem;">Geçen yıl 11.si düzenlenen uluslarası maraton</span>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/kitapfuari.jpg" alt="Etkinlik-2" class="d-flex w-100">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/kitapfuari.jpg" alt="Etkinlik-3" class="d-flex w-100">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/kitapfuari.jpg" alt="Etkinlik-4" class="d-flex w-100">
+                    </div>
+                </div>
+
+                <!-- Left and right controls/icons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#etkinlikSlider" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#etkinlikSlider" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+              </div>
+          </div>
+        </div>
+
+        <div class="col-sm ms-auto">
+          <div class="col-sm">
+            <div class="card p-3">
+              <h4 id="etkinlikBaslik">Etkinlik Başlığı</h4>
+              <p class="pCardCustom" id="etkinlikAciklama">Etkinliğe ait açıklama burada gösterilecektir.</p>
+            </div>
+          </div>
+ 
+      </div>
+</div>
+        </div>
+    </div>
+
+
 
    </main>
 
@@ -88,6 +210,7 @@
         </footer>
     </div>
     
+    <script src="js/slider.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
   </body>
 </html>
