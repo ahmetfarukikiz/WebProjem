@@ -11,6 +11,11 @@
 </head>
   <body>
 
+  <!-- giriş yapıldıysa hoşgeldin *** yazar -->
+    <div id="hosgeldinMesaji" class="alert alert-success text-center" role="alert" style="display: none;">
+        Hoşgeldiniz 
+     </div>
+
     <!-- navbar kısmı -->
    <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-custom">
         <div class="container-sm">  
@@ -111,7 +116,7 @@
           <div class="col-12 col-md align-self-start  my-2 " height="%100">
             <h3 class="m-3 ortaBaslik" >Bilgisayar Oyunları Oynamayı Severim</h3> <hr>
             
-          <div class="my-2" id="sonuc"> Api Yükleniyor... </div>
+          <div class="my-2" id="oyunApi"> Api Yükleniyor... </div>
 
           </div>
           <div class="col-12 col-md align-self-start  my-2 " height="%100">
@@ -146,15 +151,17 @@
 
 
     
+    <!-- footer -->
         <footer class="footer text-center p-2" style="height: 67px;">
-
            <span>© 2025 Tüm Hakları Saklıdır</span>
            <br>
-              <span>Ahmet Faruk İkiz </span> - <a class="linkCustom" href="login.html">Giriş Yap</a> <span>/</span> <a class="linkCustom" href="iletisim.html">İletişim</a>
+              <span>Ahmet Faruk İkiz </span> - <a class="linkCustom" href="login.html">Giriş Yap</a> <span>/
+              </span> <a class="linkCustom" href="iletisim.html">İletişim</a>
         </footer>
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-    <script src="js/funcs.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/loginkontrol.js"></script>
   </body>
 </html>

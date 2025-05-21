@@ -11,7 +11,7 @@
 </head>
   <body>
 
-      <!-- navbar kısmı -->
+    <!-- navbar kısmı -->
    <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-custom">
         <div class="container-sm">  
           <a class="navbar-brand  d-flex align-items-center" href="index.html">
@@ -25,20 +25,29 @@
           
          <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              
 
                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"> <i class="bi bi-person-fill m-2"></i>Kişisel</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item">
-                <a class="nav-link" href="ilgi-alanlarim.html"><i class="bi bi-music-note-beamed m-2"></i>İlgi Alanlarım</a>
-              </li>
+                  <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"> <i class="bi bi-person-fill m-2"></i>Kişisel</a>
+                  <ul class="dropdown-menu">
 
-              <li class="nav-item">
-                <a class="nav-link" href="cv.html"><i class="bi bi-mortarboard-fill m-2"></i>CV</a>
-              </li>
-                </ul>
+                      <li class="nav-item">
+                        <a class="nav-link" href="ilgi-alanlarim.html"><i class="bi bi-music-note-beamed m-2"></i>İlgi Alanlarım</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="cv.html"><i class="bi bi-mortarboard-fill m-2"></i>CV</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="bi bi-house-door-fill m-2"></i>Hakkımda</a>
+                      </li>
+
+                  </ul>
               </li>
               
+              
+             
               
               <li class="nav-item">
                 <a class="nav-link" href="sehir.html"><i class="bi bi-buildings-fill m-2"></i>Şehrim</a>
@@ -53,88 +62,122 @@
                 <a class="nav-link" href="iletisim.html"><i class="bi bi-telephone-outbound-fill m-2"></i>İletişim</a>
               </li>
 
+              
+              
+
                <li class="nav-item">
                 <a class="nav-link" href="login.html"><i class="bi bi-person-fill-add m-2"></i>Giriş Yap</a>
               </li>
 
-          
+              
+
             </ul>
           </div>
         </div>
     </nav>
 
 
+ <!-- header bölümü -->
+    <header class="header headerCustom2">
+      <div class="container container-sm ">
+        
+          <p>İletişim Bilgilerinizi ve Tercihlerinizi giriniz</p>
+      </div>
+    </header>
+
+
 
      <!-- ana içerik -->
-    <main class="flex-fill contact-container pt-4 mt-3">,
+    <main class="flex-fill contact-container pt-3 mt-3">
 
-
+    <div class="container">
       <div class="row justify-content-center">
-        <div class="col-lg-7">
+        <div class="col-lg-8">
           <div class="card">
             <div class="card-header" style="background-color: rgb(3, 74, 74);">
               
      
-                  <div class="container container-sm  py-2 my-2">
+                  <div class="container container-fluid py-2 my-2">
                     
-                  <h1 class="m-1  text-center" style="color: azure;">iletişim Formu</h1>
+                  <h1 class="m-1  text-center" style="color: rgb(240, 255, 251);">iletişim Formu</h1>
 
                   </div>
          
             </div>
 
             <div class="card-body">
-
-              <!-- ilk satır -->
-              <div class="row">
-                  <div class="col-md-6 mb-3">
-                      <label for="name" class="form-label">Adınız:</label>
-                      <input type="text" class="form-control" id="name" placeholder="Adınızı Giriniz" name="name">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                      <label for="name" class="form-label">Soyadınız:</label>
-                      <input type="text" class="form-control" id="surname" placeholder="Soyadınızı Giriniz" name="surname">
-                  </div>
-              </div>
-              
-              <!-- ikinci satır -->
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                      <label for="telephone" class="form-label">Telefon:</label>
-                      <input type="telephone" class="form-control" id="telephone" placeholder="+90 5** *** ****" name="telephone">
+              <form id="iletisimID" action="iletisimsonuc.html" method="GET">
+                <!-- ilk satır -->
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="name" class="form-label">Adınız:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Adınızı Giriniz" name="name">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="name" class="form-label">Soyadınız:</label>
+                        <input type="text" class="form-control" id="surname" placeholder="Soyadınızı Giriniz" name="surname">
+                    </div>
                 </div>
-                <div class="col-md-6 mb-3">
-                      <label for="email" class="form-label">E-Posta:</label>
-                      <input type="email" class="form-control" id="email" placeholder="ornek@sakarya.edu.tr" name="email">
+                
+                <!-- ikinci satır -->
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label for="telephone" class="form-label">Telefon:</label>
+                        <input  type="tel" id="telefon" class="form-control" name="telefon"  placeholder="05** *** ****">
+                        <div class="invalid-feedback" data-i18n="form_telefon_err">11 haneli telefon no girin.</div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label">E-Posta:</label>
+                        <input type="email" class="form-control" id="email" placeholder="ornek@sakarya.edu.tr" name="email">
+                   </div>
+
                 </div>
 
-                <!--  üçüncü satır  -->
-                  <div class="row">
+                  <!--  üçüncü satır  -->
+                <div class="row">
+
                     <div class="col-2 mb-3">
-                        <label for="email" class="form-label">Yaş:</label>
-                        <input type="number" class="form-control" id="email" placeholder="örnek: 19" name="email">
-                      </div>
-                  </div>
+                        <label for="age" class="form-label">Yaş:</label>
+                        <input type="number" class="form-control" id="age" placeholder="örnek: 19" name="age">
+                    </div>
 
-              </div>
-              
-            </div>
-    
-          </div>
-        </div>
-      </div>
+                    
 
-   </main>
+                </div>
 
-     <div class="footer" style="margin-top: 120px;">
+                <div class="row">
+
+                     <div class="col-sm mb-3">
+                        <label for="age" class="form-label">Başvuru Nedeni</label>
+                        <select type="number" class="form-select" id="basvuruNeden" name="basvuruNeden">
+                          <option value="oneri">Öneri</option>
+                          <option value="teknik">Teknik</option>
+                          <option value="sikayet">Şikayet</option>
+                          <option value="diger">Diğer</option>
+                        </select>
+                    </div>
+                </div>
+
+         
+              </form>  <!-- form bitisi -->
+            </div>  <!-- card-body bitisi -->
+          </div>   <!-- card bitisi -->
+        </div>   <!-- ana col bitisi -->
+      </div>   <!-- ana row bitisi -->
+    </div>  <!-- ana container bitisi -->
+  </main>
+
+    <!-- footer -->
         <footer class="footer text-center p-2" style="height: 67px;">
-
            <span>© 2025 Tüm Hakları Saklıdır</span>
            <br>
-              <span>Ahmet Faruk İkiz </span> - <a class="linkCustom" href="login.html">Giriş Yap</a>
+              <span>Ahmet Faruk İkiz </span> - <a class="linkCustom" href="login.html">Giriş Yap</a> <span>/
+              </span> <a class="linkCustom" href="iletisim.html">İletişim</a>
         </footer>
-    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  
   </body>
 </html>

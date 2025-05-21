@@ -11,7 +11,12 @@
 </head>
   <body>
 
-     <!-- navbar kısmı -->
+      <!-- hatalı giriş kontrolü -->
+    <div id="hataMesaji" class="alert alert-danger text-center" role="alert" style="display: none;">
+        Kullanıcı adı veya şifre hatalı!
+     </div>
+
+   <!-- navbar kısmı -->
    <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-custom">
         <div class="container-sm">  
           <a class="navbar-brand  d-flex align-items-center" href="index.html">
@@ -25,20 +30,29 @@
           
          <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              
 
                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"> <i class="bi bi-person-fill m-2"></i>Kişisel</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item">
-                <a class="nav-link" href="ilgi-alanlarim.html"><i class="bi bi-music-note-beamed m-2"></i>İlgi Alanlarım</a>
-              </li>
+                  <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"> <i class="bi bi-person-fill m-2"></i>Kişisel</a>
+                  <ul class="dropdown-menu">
 
-              <li class="nav-item">
-                <a class="nav-link" href="cv.html"><i class="bi bi-mortarboard-fill m-2"></i>CV</a>
-              </li>
-                </ul>
+                      <li class="nav-item">
+                        <a class="nav-link" href="ilgi-alanlarim.html"><i class="bi bi-music-note-beamed m-2"></i>İlgi Alanlarım</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="cv.html"><i class="bi bi-mortarboard-fill m-2"></i>CV</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="bi bi-house-door-fill m-2"></i>Hakkımda</a>
+                      </li>
+
+                  </ul>
               </li>
               
+              
+             
               
               <li class="nav-item">
                 <a class="nav-link" href="sehir.html"><i class="bi bi-buildings-fill m-2"></i>Şehrim</a>
@@ -53,15 +67,20 @@
                 <a class="nav-link" href="iletisim.html"><i class="bi bi-telephone-outbound-fill m-2"></i>İletişim</a>
               </li>
 
+              
+              
+
                <li class="nav-item">
                 <a class="nav-link" href="login.html"><i class="bi bi-person-fill-add m-2"></i>Giriş Yap</a>
               </li>
 
-          
+              
+
             </ul>
           </div>
         </div>
     </nav>
+
     
     <!-- header bölümü -->
     <header class="header headerCustom2">
@@ -72,35 +91,84 @@
     </header>
 
     <!-- ana içerik -->
-    <main class="flex-fill">
-      <div class="container-sm p-5">
-        <form action="php/login.php">
-          <div class="mb-3 mt-3">
-            <label for="email" class="form-label">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="b240210041@sakarya.edu.tr" name="email">
-          </div>
-          <div class="mb-3">
-            <label for="pwd" class="form-label">Password:</label>
-            <input type="password" class="form-control" id="pwd" placeholder="b240210041" name="pswd">
-          </div>
-          <div class="form-check mb-3">
-          </div>
-          <button type="submit" class="btn btn-danger">Submit</button>
-        </form>
-      </div>
 
+ <main class="flex-fill contact-container pt-3 mt-3">
+
+  <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="card">
+            <div class="card-header" style="background-color: rgb(3, 74, 74);">
+              
+     
+                  <div class="container container-sm  py-2 my-2">
+                    
+                  <h1 class="m-1  text-center" style="color: rgb(240, 255, 251);">Giriş Yap</h1>
+
+                  </div>
+         
+            </div>
+
+            <div class="card-body">
+    
+               
+              <form action="php/login.php" method="POST">
+                <div class="row px-2">
+
+                   
+                    <div class="mb-3 mt-3">
+                      <label for="email" class="form-label">Email:</label>
+                      <input type="email" class="form-control" id="email" placeholder="b2412100001@sakarya.edu.tr" name="kullaniciAdi">
+                    </div>
+                    <div class="mb-3">
+                      <label for="pwd" class="form-label">Password:</label>
+                      <input type="password" class="form-control" id="password" placeholder="b2412100001" name="parola">
+                    </div>
+                   <div class="mb-3">
+                      <label for="check" class="form-label">Parolayı Göster:</label>
+                      <input type="checkbox" id="checkbox" name="checkbox">
+                    </div>
+                  <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-success">Giriş Yap</button>
+                    <button type="reset" class="btn btn-dark">Temizle</button>
+                  </div>
+  
+
+
+                </div>
+
+              
+         
+              </form>  <!-- form bitisi -->
+            </div>  <!-- card-body bitisi -->
+          </div>   <!-- card bitisi -->
+        </div>   <!-- ana col bitisi -->
+      </div>   <!-- ana row bitisi -->
+    </div>  <!-- ana container bitisi -->
    </main>
+      
+
 
     <!-- footer -->
-      <div class="footer" style="margin-top: 120px;">
         <footer class="footer text-center p-2" style="height: 67px;">
-
            <span>© 2025 Tüm Hakları Saklıdır</span>
            <br>
-              <span>Ahmet Faruk İkiz </span> - <a class="linkCustom" href="login.html">Giriş Yap</a>
+              <span>Ahmet Faruk İkiz </span> - <a class="linkCustom" href="login.html">Giriş Yap</a> <span>/
+              </span> <a class="linkCustom" href="iletisim.html">İletişim</a>
         </footer>
-    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+   <script src="js/loginkontrol.js"></script>
+   <script>
+    // şifreyi gösterip kapama tuşu
+    const tooglePassword = document.querySelector('#checkbox');
+            const password = document.querySelector('#password');
+
+            tooglePassword.addEventListener('click', function(){
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type',type);
+            });       
+
+   </script>
   </body>
 </html>
