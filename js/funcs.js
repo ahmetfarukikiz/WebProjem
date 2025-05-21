@@ -16,3 +16,5 @@ fetch(`https://api.rawg.io/api/games?search=hollow knight&key=${API_KEY}`)
   .catch(err => {
     document.getElementById("sonuc").innerText = "Hata oluştu: " + err;
   });
+
+  
