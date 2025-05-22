@@ -48,7 +48,11 @@ fetch(`https://api.rawg.io/api/games?search=hollow knight&key=${API_KEY}`)
     //sayfa yüklendikten sonra, parametre almadan gider oyunIsımleri arrayinin tüm elemanları için oyunBilgisiGetir fonksiyonunu çalıştırır
     window.addEventListener("DOMContentLoaded", () => {
       oyunIsimleri.forEach(oyunAdi => oyunBilgisiGetir(oyunAdi)); //foreach döngüsü gibi çalışır her bir eleman için aynı işi yapar
+      setTimeout(() => {
+        oyunlarDiv.innerHTML = "";
+    }, 420); //0.42 saniye sonra txt yi siler
     });
+    
 
     function oyunBilgisiGetir(oyunAdi) {
       const url = `https://api.rawg.io/api/games?search=${encodeURIComponent(oyunAdi)}&key=${API_KEY}`;
@@ -79,5 +83,7 @@ fetch(`https://api.rawg.io/api/games?search=hollow knight&key=${API_KEY}`)
           hataKart.classList.add("oyun-karti");
           hataKart.innerHTML = `<p><strong>"${oyunAdi}"</strong> için hata oluştu.</p>`;
           oyunlarDiv.appendChild(hataKart);
+
+          
         });
     }

@@ -88,86 +88,146 @@
 
 
      <!-- ana içerik -->
-    <main class="flex-fill contact-container pt-3 mt-3">
+<main class="flex-fill contact-container p-3 m-3">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card">
 
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="card">
-            <div class="card-header" style="background-color: rgb(3, 74, 74);">
-              
-     
-                  <div class="container container-fluid py-2 my-2">
-                    
-                  <h1 class="m-1  text-center" style="color: rgb(240, 255, 251);">iletişim Formu</h1>
-
-                  </div>
-         
+          <div class="card-header" style="background-color: rgb(3, 74, 74);">
+            <div class="container container-fluid py-2 my-2">
+              <h1 class="m-1 text-center" style="color: rgb(240, 255, 251);">İletişim Formu</h1>
             </div>
+          </div>
 
-            <div class="card-body">
-              <form id="iletisimID" action="iletisimsonuc.html" method="GET">
-                <!-- ilk satır -->
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="name" class="form-label">Adınız:</label>
-                        <input type="text" class="form-control" id="name" placeholder="Adınızı Giriniz" name="name">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="name" class="form-label">Soyadınız:</label>
-                        <input type="text" class="form-control" id="surname" placeholder="Soyadınızı Giriniz" name="surname">
-                    </div>
+          <div class="card-body">
+            <form id="iletisimID" @submit="submitForm" method="POST" action="php/iletisimsonuc.php" enctype="multipart/form-data">
+              <!-- ilk satır -->
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="ad" class="form-label">Adınız:</label>
+                  <input type="text" class="form-control" id="ad" placeholder="Adınızı Giriniz" name="ad" v-model="form.ad">
                 </div>
-                
-                <!-- ikinci satır -->
-                <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="soyad" class="form-label">Soyadınız:</label>
+                  <input type="text" class="form-control" id="soyad" placeholder="Soyadınızı Giriniz" name="soyad" v-model="form.soyad">
+                </div>
+              </div>
 
-                    <div class="col-md-6 mb-3">
-                        <label for="telephone" class="form-label">Telefon:</label>
-                        <input  type="tel" id="telefon" class="form-control" name="telefon"  placeholder="05** *** ****">
-                        <div class="invalid-feedback" data-i18n="form_telefon_err">11 haneli telefon no girin.</div>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label for="email" class="form-label">E-Posta:</label>
-                        <input type="email" class="form-control" id="email" placeholder="ornek@sakarya.edu.tr" name="email">
-                   </div>
-
+              <!-- ikinci satır -->
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="telefon" class="form-label">Telefon:</label>
+                  <input type="tel" id="telefon" class="form-control" name="telefon" placeholder="05** *** ****" v-model="form.telefon">
+                  <div class="invalid-feedback">11 haneli telefon no girin.</div>
                 </div>
 
-                  <!--  üçüncü satır  -->
-                <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label">E-Posta:</label>
+                  <input type="email" class="form-control" id="email" placeholder="ornek@sakarya.edu.tr" name="email" v-model="form.email">
+                </div>
+              </div>
 
-                    <div class="col-2 mb-3">
-                        <label for="age" class="form-label">Yaş:</label>
-                        <input type="number" class="form-control" id="age" placeholder="örnek: 19" name="age">
-                    </div>
+              <!-- üçüncü satır -->
+              <div class="row">
+                <div class="col-4 mb-3">
+                  <label for="yas" class="form-label">Yaş:</label>
+                  <input type="number" class="form-control" id="yas" placeholder="örnek: 19" name="yas" v-model="form.yas">
+                </div>
+                <div class="col-8 mb-3">
+                  <label for="aciliyet" class="form-label">Aciliyet</label>
+                  <input type="range" name="aciliyet" id="aciliyet" v-model="form.aciliyet" class="form-range">
+                </div>
+              </div>
 
-                    
+              <!-- dördüncü satır -->
+              <div class="row">
+                <div class="col-sm mb-3">
+                  <label for="basvuruNedeni" class="form-label">Başvuru Nedeni</label>
+                  <select class="form-select" id="basvuruNedeni" name="basvuruNedeni" v-model="form.basvuruNedeni">
+                    <option value="oneri">Öneri</option>
+                    <option value="teknik">Teknik</option>
+                    <option value="sikayet">Şikayet</option>
+                    <option value="diger">Diğer</option>
+                  </select>
+                </div>
+              </div>
 
+              <!-- beşinci satır -->
+              <div class="row">
+                <div class="col-sm mb-3">
+                  <label class="form-label">Cinsiyet:</label> <br>
+                  <input type="radio" name="cinsiyet" id="erkek" value="Erkek" v-model="form.cinsiyet" />
+                  <label for="erkek">Erkek</label>
+                  <input type="radio" name="cinsiyet" id="kadin" value="Kadın" v-model="form.cinsiyet" />
+                  <label for="kadin">Kadın</label>
                 </div>
 
-                <div class="row">
+                <div class="col-sm mb-3">
+                  <label class="form-label">Bilinen Kodlama Dilleri:</label> <br>
+                  <input type="checkbox" name="kodlama[]" id="java" value="Java" class="kodlama-checkbox" v-model="form.kodlama" />
+                  <label for="java">Java</label>
+                  <input type="checkbox" name="kodlama[]" id="python" value="Python" class="kodlama-checkbox" v-model="form.kodlama" />
+                  <label for="python">Python</label>
+                  <input type="checkbox" name="kodlama[]" id="html" value="Html" class="kodlama-checkbox" v-model="form.kodlama" />
+                  <label for="html">HTML</label>
+                </div>
+              </div>
 
-                     <div class="col-sm mb-3">
-                        <label for="age" class="form-label">Başvuru Nedeni</label>
-                        <select type="number" class="form-select" id="basvuruNeden" name="basvuruNeden">
-                          <option value="oneri">Öneri</option>
-                          <option value="teknik">Teknik</option>
-                          <option value="sikayet">Şikayet</option>
-                          <option value="diger">Diğer</option>
-                        </select>
-                    </div>
+              <!-- altıncı satır -->
+              <div class="row">
+                <div class="col mb-3">
+                  <label for="renk" class="form-label">Renk:</label>
+                  <input type="color" name="renk" id="renk" v-model="form.renk" class="form-control">
                 </div>
 
-         
-              </form>  <!-- form bitisi -->
-            </div>  <!-- card-body bitisi -->
-          </div>   <!-- card bitisi -->
-        </div>   <!-- ana col bitisi -->
-      </div>   <!-- ana row bitisi -->
-    </div>  <!-- ana container bitisi -->
-  </main>
+                <div class="col mb-3">
+                  <label for="tarih" class="form-label">Beklenen Dönüt Tarihi:</label>
+                  <input type="date" name="tarih" id="tarih" v-model="form.tarih" class="form-control">
+                </div>
+              
+
+               <div class="col mb-3">
+                  <label for="saat" class="form-label">Beklenen Dönüt Saati:</label>
+                  <input type="time" name="saat" id="saat" v-model="form.saat" class="form-control">
+                </div>
+             </div> 
+              
+
+              <!-- yedinci satır -->
+              <div class="row">
+                <div class="col mb-3">
+                  <label for="dosya" class="form-label">Yüklenecek Dosya</label>
+                  <input type="file" name="dosya" id="dosya" class="form-control" @change="onFileChange">
+                </div>
+              </div>
+
+               <div class="row">
+                <div class="col-sm flex-fill mb-3">
+                    <label for="konu" class="form-label">Konu</label> <br>
+                  <textarea name="konu" id="konu" v-model="form.konu" rows="6px" cols="35px"></textarea>
+                </div>
+              </div>
+
+              <!-- buton -->
+      <div class="d-flex gap-2 w-100 mb-2">
+        <button type="button" class="btn btn-danger flex-grow-1" onclick="jsiledogrula()">JS ile dogrula</button>
+        <button type="button" class="btn btn-primary flex-grow-1" @click="vueiledogrula">VUE.JS ile dogrula</button>
+      </div>
+      <div class="w-100 mb-2">
+        <button type="submit" id="gonderBtn" class="btn btn-success w-100" :disabled="!isValid " >Gönder</button>
+      </div>
+      <div class="w-100">
+        <button type="reset" class="btn btn-dark w-100">Temizle</button>
+      </div>
+              </div>
+            </form>
+          </div> <!-- card-body bitişi-->
+        </div> <!-- card bitişi -->
+      </div> <!-- ana colon bitişi -->
+    </div> <!-- ana row bitişi -->
+  </div> <!-- ana container bitişi -->
+</main>
 
     <!-- footer -->
         <footer class="footer text-center p-2" style="height: 67px;">
@@ -177,6 +237,9 @@
               </span> <a class="linkCustom" href="iletisim.html">İletişim</a>
         </footer>
     
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="js/form.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
   
   </body>
