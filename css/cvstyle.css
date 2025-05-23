@@ -30,15 +30,15 @@
 }
 
 body{
-    background-color: rgb(243, 252, 252);
+    background-color: rgb(199, 242, 231);
 }
 
 
 p {
-    text-align: center;
-    color: #4c6562;
+    color: #d7f1ed;
     margin-top: 10px;
     margin-bottom: 2px;
+    margin-left: 5px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -52,7 +52,9 @@ p.pCardCustom {
 
 h1,h2,h3 {
 
-    color: #001713;
+    color: #ffffff;
+    text-shadow: rgb(0, 0, 0);
+    text-shadow: 10px;
     font-family:Georgia, 'Times New Roman', Times, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-style: bold;
 }
@@ -104,7 +106,7 @@ header.headerCustom{
 }
 
 header.headerCustom2{
-    background:  #d9ebe7;
+    background:  #27a489;
 }
 
 footer{

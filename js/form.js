@@ -31,7 +31,7 @@ function jsiledogrula() {
   if (konu.value.trim() === "") showError(konu, "Konu boş bırakılamaz.");
   if (!cinsiyet) showError(document.querySelector('input[name="cinsiyet"]').parentNode, "Cinsiyet seçiniz.");
 
-    // Gönder butonunu aktif/pasif yap
+    // Gönder butonunu enabled disabled yapıyor
   if (isValid) {
     gonderBtn.removeAttribute("disabled");
   } else {
@@ -54,7 +54,7 @@ const app = new Vue({
       telefon: '',
       email: '',
       yas: '',
-      aciliyet: 5,
+      aciliyet: 50,
       basvuruNedeni: 'oneri',
       cinsiyet: '',
       kodlama: [],
@@ -73,10 +73,10 @@ const app = new Vue({
       if (!this.form.ad.trim()) this.errors.ad = 'Ad boş bırakılamaz.';
       if (!this.form.soyad.trim()) this.errors.soyad = 'Soyad boş bırakılamaz.';
       if (!/^05\d{9}$/.test(this.form.telefon)) this.errors.telefon = 'Telefon 05 ile başlamalı ve 11 haneli olmalı.';
-      if (!/^[\w\.-]+@org\.sakarya\.edu\.tr$/.test(this.form.email)) this.errors.email = "Mail '@org.sakarya.edu.tr' formatında olmalı.";
-      if (!this.form.yas || this.form.yas <= 0 || this.form.yas > 120) this.errors.yas = 'Geçerli bir yaş gir.';
+      if (!/^[\w\.-]+@org\.sakarya\.edu\.tr$/.test(this.form.email)) this.errors.email = "Mail 'ornek@org.sakarya.edu.tr' formatında olmalı.";
+      if (!this.form.yas || this.form.yas <= 0 || this.form.yas > 120) this.errors.yas = 'Geçerli bir yaş giriniz.';
       if (!this.form.cinsiyet) this.errors.cinsiyet = 'Cinsiyet seçiniz.';
-      if (!this.form.konu.trim()) this.errors.konu = 'Konu boş bırakılamaz.';
+      if (!this.form.konu.trim()) this.errors.konu = 'Konu kısmı boş bırakılamaz.';
 
       return Object.keys(this.errors).length === 0;
     }

@@ -8,15 +8,10 @@ $password = $_POST["parola"];
 
 // geçerli user pass bilgisi
 
-$yetkiliUSR = "b2412100001@sakarya.edu.tr";
+$yetkiliUSR = "b2412100001@org.sakarya.edu.tr";
 $yetkiliPWD = "b2412100001";
 
-// $salt = "1234567890";
-// $hash = hash('sha256', $salt . $password);
-
-//NEREDEN ÇAĞRILACAĞINI KONTROL ET
-
-if(! count($_POST)) {
+if(! count($_POST)) { //posttan gelen veriler 0 ise yani hiç veri gelmemişse if bloğu çalışır
     echo "bu dosyaya direk erişim yapamazsınız";
     echo "<a href='8Nisan.html'> Forma Geri Dön</a>";
 }
@@ -25,23 +20,14 @@ if(! count($_POST)) {
 
 //formdaki değişkenleri kontrol et
 if ($kullanici_ad == $yetkiliUSR && $password == $yetkiliPWD) {
-    header("Location: ../index.html?welcome=1&ad=" . urlencode($kullanici_ad));
-    exit;
+    header("Location: ../index.html?welcome=1&ad=" . urlencode($kullanici_ad)); //@ tarzı ifadeleri asci koduna çevirir
+    exit(); //kodun devamını çalıştırma 
 } 
 
 else {
  header("Location: ../login.html?error=1");
  exit();
 }
-
-
-//Doğru ise aşağıdaki işlemleri yap
-
-
-
-
-
-
 
 
 
