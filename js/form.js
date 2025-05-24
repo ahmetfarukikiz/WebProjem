@@ -10,6 +10,9 @@ function jsiledogrula() {
   const yas = document.getElementById("yas");
   const konu = document.getElementById("konu");
   const cinsiyet = document.querySelector('input[name="cinsiyet"]:checked');
+  const tarih = document.getElementById("tarih");
+  const saat = document.getElementById("saat");
+
   let isValid = true;
   butonaBasildi = true;
 
@@ -27,15 +30,18 @@ function jsiledogrula() {
   if (soyad.value.trim() === "") showError(soyad, "Soyad boş bırakılamaz.");
   if (!/^05\d{9}$/.test(telefon.value)) showError(telefon, "Telefon 05 ile başlamalı ve 11 haneli olmalı.");
   if (!/^[\w\.-]+@org\.sakarya\.edu\.tr$/.test(email.value)) showError(email, "Mail '@org.sakarya.edu.tr' formatında olmalı.");
-  if (yas.value <= 0 || yas.value > 120) showError(yas, "Geçerli bir yaş gir.");
+  if (yas.value <= 0 || yas.value > 150) showError(yas, "Geçerli bir yaş gir.");
   if (konu.value.trim() === "") showError(konu, "Konu boş bırakılamaz.");
   if (!cinsiyet) showError(document.querySelector('input[name="cinsiyet"]').parentNode, "Cinsiyet seçiniz.");
+  if (!tarih.value) showError(tarih, "Lütfen bir tarih seçiniz.");
+  if (!saat.value) showError(saat, "Lütfen bir saat seçiniz.");
 
     // Gönder butonunu enabled disabled yapıyor
   if (isValid) {
     gonderBtn.removeAttribute("disabled");
   } else {
-    gonderBtn.setAttribute("disabled", "disabled");
+    gonderBtn.setAttribute("disabled", "disabled"); //disabled isimli disabled value lu attribute ayarlar
+    window.scrollTo({ top: 0, behavior: 'smooth' }); //hata verdiyse sayfayı yukarı kaydırır
   }
 
   return isValid;
@@ -77,6 +83,8 @@ const app = new Vue({
       if (!this.form.yas || this.form.yas <= 0 || this.form.yas > 120) this.errors.yas = 'Geçerli bir yaş giriniz.';
       if (!this.form.cinsiyet) this.errors.cinsiyet = 'Cinsiyet seçiniz.';
       if (!this.form.konu.trim()) this.errors.konu = 'Konu kısmı boş bırakılamaz.';
+      if (!this.form.tarih) this.errors.tarih = 'Dönüt tarihi seçilmelidir.';
+      if (!this.form.saat) this.errors.saat = 'Dönüt saati seçilmelidir.';
 
       return Object.keys(this.errors).length === 0;
     }
@@ -133,3 +141,5 @@ inputs.forEach(input => {
     gonderBtn.setAttribute("disabled", "disabled");
   });
 });
+
+

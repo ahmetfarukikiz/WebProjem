@@ -38,4 +38,45 @@
         }, 3000);
     }
 
+
+     const form = document.querySelector("form");
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("sifre");
+
+  form.addEventListener("submit", function (e) {
+    // Önceki hataları temizle
+    document.querySelectorAll(".error-msg").forEach(el => el.remove());
+
+    let valid = true;
+
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    function showError(input, message) {
+      const div = document.createElement("div");
+      div.className = "text-danger error-msg mt-1";
+      div.innerText = message;
+      input.parentNode.appendChild(div);
+      valid = false;
+    }
+
+    if (email === "") {
+      showError(emailInput, "Email boş bırakılamaz.");
+    } else if (!/^[\w\.-]+@org\.sakarya\.edu\.tr$/.test(email)) {
+      showError(emailInput, "Email '@org.sakarya.edu.tr' formatında olmalı.");
+    }
+
+    if (password === "") {
+      showError(passwordInput, "Şifre boş bırakılamaz.");
+    }
+
+    if (!valid) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" }); // yukarı kay
+    }
+  });
+
      });
+
+
+  

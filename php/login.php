@@ -4,7 +4,7 @@
 
 
 $kullanici_ad = $_POST["kullaniciAdi"];
-$password = $_POST["parola"];
+$password = $_POST["sifre"];
 
 // geçerli user pass bilgisi
 

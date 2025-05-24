@@ -11,7 +11,20 @@ yazdir("soyad");
 yazdir("telefon");
 yazdir("email");
 yazdir("yas");
-yazdir("aciliyet");
+
+
+
+//aciliyet kısmı
+$aciliyet = $_POST['aciliyet'];
+$aciliyetstring ="";
+
+if($aciliyet < 35) $aciliyetstring = "düşük";
+else if($aciliyet > 35 && $aciliyet < 65) $aciliyetstring = "orta";
+else  $aciliyetstring = "yüksek";
+
+echo "<strong>aciliyet: </strong> ". $aciliyetstring . "<br>";
+
+
 yazdir("basvuruNedeni");
 yazdir("cinsiyet");
 
@@ -30,6 +43,9 @@ else {
 echo "<br>";
 
 yazdir("renk");
+$renk = $_POST['renk'];
+echo "<div style='width: 50px; height: 30px; background-color: $renk ; border: 1px solid #000;'></div>"; //rengi algıla
+
 yazdir("tarih");
 yazdir("saat");
 yazdir("konu");

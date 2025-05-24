@@ -118,18 +118,18 @@
                    
                     <div class="mb-3 mt-3">
                       <label for="email" class="form-label">Email:</label>
-                      <input type="email" class="form-control" id="email" placeholder="b2412100001@sakarya.edu.tr" name="kullaniciAdi">
+                      <input type="email" class="form-control" id="email" placeholder="b2412100001@org.sakarya.edu.tr" name="kullaniciAdi">
                     </div>
                     <div class="mb-3">
-                      <label for="pwd" class="form-label">Password:</label>
-                      <input type="password" class="form-control" id="password" placeholder="b2412100001" name="parola">
+                      <label for="sifre" class="form-label">Şifre:</label>
+                      <input type="password" class="form-control" id="sifre" placeholder="b2412100001" name="sifre">
                     </div>
                    <div class="mb-3">
-                      <label for="check" class="form-label">Parolayı Göster:</label>
+                      <label for="check" class="form-label">Şifreyi Göster:</label>
                       <input type="checkbox" id="checkbox" name="checkbox">
                     </div>
                   <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-success">Giriş Yap</button>
+                    <button type="submit" class="btn" style="background-color: rgb(12, 114, 127); color: aliceblue;">Giriş Yap</button>
                     <button type="reset" class="btn btn-dark">Temizle</button>
                   </div>
   
@@ -162,7 +162,7 @@
    <script>
     // şifreyi gösterip kapama tuşu
     const tooglePassword = document.querySelector('#checkbox');
-            const password = document.querySelector('#password');
+            const password = document.querySelector('#sifre');
 
             tooglePassword.addEventListener('click', function(){
                 const type = password.getAttribute('type') === 'password' ? 'text' : 'password';

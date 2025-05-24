@@ -106,7 +106,7 @@ header.headerCustom{
 }
 
 header.headerCustom2{
-    background:  #27a489;
+    background:  #27a47c;
 }
 
 footer{
@@ -178,6 +178,11 @@ h1.hSehirCustom, h2.hSehirCustom,h3.hSehirCustom {
 
 
 .cardCustomCV {
- background-color: #2d7373;
+ background-color: #357566;
  color: #e2eeec;
+}
+
+textarea {
+    resize: none;
+    width: 100%
 }
