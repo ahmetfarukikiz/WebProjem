@@ -6,19 +6,23 @@ echo '
     <meta charset="UTF-8">
     <title>Form Sonuçları</title>
     <style>
+
+        strong {
+        margin: 2px;
+}
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
+            background-color:rgb(65, 106, 94);
             display: flex;
             justify-content: center;
-            margin-top: 50px;
+            margin-top: 20px;
         }
         .card {
-            background-color: #fff;
-            border: 1px solid #ddd;
+            background-color: rgb(37, 117, 101);
             border-radius: 10px;
-            width: 600px;
-            padding: 20px;
+            width: 800px;
+            color: rgb(208, 237, 231);
+            padding: 30px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         .card h2 {
@@ -30,13 +34,13 @@ echo '
             padding: 10px 15px;
             border: none;
             border-radius: 5px;
-            background-color: #007BFF;
+            background-color:rgb(8, 78, 61);
             color: white;
             cursor: pointer;
             text-decoration: none;
         }
         .btn:hover {
-            background-color: #0056b3;
+            background-color:rgb(13, 149, 99);
         }
         .color-box {
             width: 50px;
@@ -53,7 +57,7 @@ echo '
     <h2>Gönderilen Bilgiler:</h2>';
 
 function yazdir($veri) {
-    echo "<strong>$veri:</strong> " . (isset($_POST[$veri]) ? htmlspecialchars($_POST[$veri]) : "Veri Yok") . "<br>"; 
+    echo "<strong>$veri:</strong> " . (isset($_POST[$veri]) ? htmlspecialchars($_POST[$veri]) : "Veri Yok") . "<br> <br>"; 
 }
 
 yazdir("ad");
@@ -70,7 +74,7 @@ if($aciliyet < 35) $aciliyetstring = "düşük";
 else if($aciliyet > 35 && $aciliyet < 65) $aciliyetstring = "orta";
 else  $aciliyetstring = "yüksek";
 
-echo "<strong>Aciliyet: </strong> ". $aciliyetstring . "<br>";
+echo "<strong>Aciliyet: </strong> ". $aciliyetstring . "<br> <br>";
 
 yazdir("basvuruNedeni");
 yazdir("cinsiyet");
@@ -81,11 +85,11 @@ if (isset($_POST['kodlama']) && is_array($_POST['kodlama'])) {
 } else {
     echo "Yok";
 }
-echo "<br>";
+echo "<br> <br>";
 
 yazdir("renk");
 $renk = $_POST['renk'] ?? "#ffffff";
-echo "<div class='color-box' style='background-color: $renk;'></div><br>";
+echo "<div class='color-box' style='background-color: $renk;'></div><br><br>";
 
 yazdir("tarih");
 yazdir("saat");
