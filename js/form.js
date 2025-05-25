@@ -12,6 +12,7 @@ function jsiledogrula() {
   const cinsiyet = document.querySelector('input[name="cinsiyet"]:checked');
   const tarih = document.getElementById("tarih");
   const saat = document.getElementById("saat");
+   const dosya = document.getElementById("dosya");
 
   let isValid = true;
   butonaBasildi = true;
@@ -35,6 +36,7 @@ function jsiledogrula() {
   if (!cinsiyet) showError(document.querySelector('input[name="cinsiyet"]').parentNode, "Cinsiyet seçiniz.");
   if (!tarih.value) showError(tarih, "Lütfen bir tarih seçiniz.");
   if (!saat.value) showError(saat, "Lütfen bir saat seçiniz.");
+  if (!dosya.value) showError(dosya, "Lütfen bir dosya seçiniz.");
 
     // Gönder butonunu enabled disabled yapıyor
   if (isValid) {
@@ -85,6 +87,7 @@ const app = new Vue({
       if (!this.form.konu.trim()) this.errors.konu = 'Konu kısmı boş bırakılamaz.';
       if (!this.form.tarih) this.errors.tarih = 'Dönüt tarihi seçilmelidir.';
       if (!this.form.saat) this.errors.saat = 'Dönüt saati seçilmelidir.';
+      if (!this.form.dosya) this.errors.dosya = 'Dosya seçilmelidir.';
 
       return Object.keys(this.errors).length === 0;
     }
